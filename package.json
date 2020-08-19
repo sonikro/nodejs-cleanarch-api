@@ -1,0 +1,58 @@
+{
+  "name": "@sonikro/nodejs-cleanarch-api",
+  "description": "NodeJS API with Clean Architecture",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "author": {
+    "name": "Endemol Shine Group Technology",
+    "url": "https://github.com/EndemolShineGroup"
+  },
+  "homepage": "https://github.com/EndemolShineGroup/nodejs-cleanarch-api",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EndemolShineGroup/nodejs-cleanarch-api.git"
+  },
+  "engines": {
+    "node": ">=8.0.0",
+    "yarn": ">=1.3.0"
+  },
+  "scripts": {
+    "pretest": "rimraf coverage/",
+    "test": "jest --no-cache --coverage",
+    "prebuild": "rimraf dist/",
+    "build": "tsc",
+    "build:docs": "rimraf docs/api && typedoc --out docs/api --target es6 --theme minimal --mode file src",
+    "semantic-release": "semantic-release",
+    "commit": "git-cz",
+    "lint": "tslint -p tsconfig.json -t codeFrame 'src/**/*.ts' -e 'src/**/*.spec.ts'"
+  },
+  "dependencies": {
+    "tslib": "^1.9.3"
+  },
+  "devDependencies": {
+    "jest": "^23",
+    "rimraf": "^2",
+    "@types/jest": "^23",
+    "@types/node": "^10",
+    "ts-jest": "^23",
+    "typedoc": "^0.13.0",
+    "typescript": "^3",
+    "@semantic-release/changelog": "^3",
+    "@semantic-release/git": "^7",
+    "husky": "^1",
+    "lint-staged": "^8",
+    "semantic-release": "^15",
+    "@commitlint/cli": "^7",
+    "@commitlint/config-conventional": "^7",
+    "@endemolshinegroup/cz-github": "^1",
+    "@endemolshinegroup/prettier-config": "^1",
+    "@endemolshinegroup/tslint-config": "^1",
+    "commitizen": "^3",
+    "prettier": "^1",
+    "tslint": "^5",
+    "tslint-config-prettier": "^1",
+    "tslint-eslint-rules": "^5"
+  },
+  "types": "dist/index.d.ts"
+}
